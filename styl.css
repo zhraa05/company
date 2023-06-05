@@ -1,0 +1,170 @@
+/* .bg-container {
+]
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.bg {
+    width: 100%;
+    height: 100%;
+    background-image: url('phone-wallpaper-g4f5fed7ea_1280.jpg');
+    background-size: cover;
+    animation: background-animate 10s ease-in-out infinite;
+
+}
+
+@keyframes background-animate {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.bg:hover {
+    filter: grayscale(100%);
+    transition: all 0.5s ease-in-out;
+} */
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    transform: rotate(-45deg);
+}
+
+.star {
+    --star-color: var(--primary-color);
+    --star-tail-length: 6em;
+    --star-tail-height: 2px;
+    --star-width: calc(var(--star-tail-length) / 6);
+    --fall-duration: 9s;
+    --tail-fade-duration: var(--fall-duration);
+    position: absolute;
+    top: var(--top-offset);
+    left: 0;
+    width: var(--star-tail-length);
+    height: var(--star-tail-height);
+    color: var(--star-color);
+    background: linear-gradient(45deg, currentColor, transparent);
+    border-radius: 50%;
+    filter: drop-shadow(0 0 6px currentColor);
+    transform: translate3d(104em, 0, 0);
+    animation: fall var(--fall-duration) var(--fall-delay) linear infinite, tail-fade var(--tail-fade-duration) var(--fall-delay) ease-out infinite;
+}
+
+@media screen and (max-width: 750px) {
+    .star {
+        animation: fall var(--fall-duration) var(--fall-delay) linear infinite;
+    }
+}
+
+.star:nth-child(1) {
+    --star-tail-length: 5.61em;
+    --top-offset: 56.49vh;
+    --fall-duration: 6.627s;
+    --fall-delay: 4.306s;
+}
+
+.star:nth-child(2) {
+    --star-tail-length: 6.63em;
+    --top-offset: 83.21vh;
+    --fall-duration: 11.728s;
+    --fall-delay: 8.469s;
+}
+
+.star:nth-child(3) {
+    --star-tail-length: 6.57em;
+    --top-offset: 11.78vh;
+    --fall-duration: 7.726s;
+    --fall-delay: 0.317s;
+}
+
+.star:nth-child(4) {
+    --star-tail-length: 5.89em;
+    --top-offset: 74.35vh;
+    --fall-duration: 8.341s;
+    --fall-delay: 5.43s;
+}
+
+.star:nth-child(5) {
+    --star-tail-length: 5.78em;
+    --top-offset: 24.01vh;
+    --fall-duration: 8.826s;
+    --fall-delay: 7.932s;
+}
+
+.star:nth-child(6) {
+    --star-tail-length: 5em;
+    --top-offset: 32.7vh;
+    --fall-duration: 9.923s;
+    --fall-delay: 2.972s;
+}
+
+.star:nth-child(7) {
+    --star-tail-length: 7.43em;
+    --top-offset: 34.57vh;
+    --fall-duration: 8.751s;
+    --fall-delay: 2.227s;
+}
+
+
+.star::before,
+.star::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: calc(var(--star-width) / -2);
+    width: var(--star-width);
+    height: 100%;
+    background: linear-gradient(45deg, transparent, currentColor, transparent);
+    border-radius: inherit;
+    animation: blink 2s linear infinite;
+}
+
+.star::before {
+    transform: rotate(45deg);
+}
+
+.star::after {
+    transform: rotate(-45deg);
+}
+
+@keyframes fall {
+    to {
+        transform: translate3d(-30em, 0, 0);
+    }
+}
+
+@keyframes tail-fade {
+
+    0%,
+    50% {
+        width: var(--star-tail-length);
+        opacity: 1;
+    }
+
+    70%,
+    80% {
+        width: 0;
+        opacity: 0.4;
+    }
+
+    100% {
+        width: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0.6;
+    }
+}

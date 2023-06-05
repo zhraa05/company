@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Marhey:wght@500&display=swap"
+        rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<style>
+    body {
+        margin: auto;
+        overflow: auto;
+        background: linear-gradient(315deg, rgba(101, 0, 94, 1) 3%, rgb(173, 84, 0)38%,
+                rgb(135, 3, 3) 98%);
+        animation: gradient 15s ease infinite;
+        background-size: 400% 400%;
+        background-attachment: fixed;
+        cursor: none;
+    }
+
+    @keyframes gradient {
+        0% {
+            background-position: 0% 0%;
+        }
+
+        50% {
+            background-position: 100% 100%;
+        }
+
+        100% {
+            background-position: 0% 0%;
+        }
+    }
+
+    .wave {
+        background: rgb(255 255 255 / 25%);
+        border-radius: 1000% 1000% 0 0;
+        position: fixed;
+        width: 200%;
+        height: 12em;
+        animation: wave 10s -3s linear infinite;
+        transform: translate3d(0, 0, 0);
+        opacity: 0.8;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    .wave:nth-of-type(2) {
+        bottom: -1.25em;
+        animation: wave 18s linear reverse infinite;
+        opacity: 0.8;
+    }
+
+    .wave:nth-of-type(3) {
+        bottom: -2.5em;
+        animation: wave 20s -1s reverse infinite;
+        opacity: 0.9;
+    }
+
+    @keyframes wave {
+        2% {
+            transform: translateX(1);
+        }
+
+        25% {
+            transform: translateX(-25%);
+        }
+
+        50% {
+            transform: translateX(-50%);
+        }
+
+        75% {
+            transform: translateX(-25%);
+        }
+
+        100% {
+            transform: translateX(1);
+        }
+    }
+
+    .fa-regular {
+        font-size: 2.5em;
+        margin: 20px 25px;
+        padding: 20px 15px;
+        transform: translateX(100%);
+        transition: .5s ease-in-out;
+        animation: updown 10s ease infinite;
+    }
+
+    h3 {
+        font-family: 'Marhey', cursive;
+        font-size: 30px;
+        width: 380px;
+        margin: 10px auto;
+        border-right: 1px solid #fff;
+        overflow: hidden;
+        white-space: nowrap;
+        animation: control-width 3s 2s steps(11) both infinite;
+        text-shadow: 3px 3px 9px #fff;
+    }
+
+
+    @keyframes updown {
+        0% {
+            transform: translateY(-100%);
+        }
+
+        50% {
+            transform: translateY(75%);
+        }
+
+        100% {
+            transform: translateY(-25%);
+        }
+    }
+
+    @keyframes control-width {
+        from {
+            width: 0px;
+        }
+
+        to {
+            width: 200px;
+        }
+    }
+
+    .ramadan {
+        font-family: 'Great Vibes', cursive;
+        font-weight: bold;
+        opacity: .3;
+        border: none;
+        font-size: 60px;
+        width: 380px;
+        margin: 10px auto;
+        text-shadow: 3px 3px 9px #fff;
+    }
+
+    .ramadan:hover {
+        opacity: 1;
+    }
+</style>
+
+
+<body>
+    <i class="fa-regular fa-star"></i>
+    <i class="fa-regular fa-star"></i>
+    <i class="fa-regular fa-star"></i>
+    <i class="fa-regular fa-star"></i>
+    <i class="fa-regular fa-moon" style="font-size: 5rem;"></i>
+    <i class="fa-regular fa-star"></i>
+    <i class="fa-regular fa-star"></i>
+    <i class="fa-regular fa-star"></i>
+    <i class="fa-regular fa-star"></i>
+    <h3>ر مضا ن كريم</h3>
+    <h4 class="ramadan">Ramadan kareem</h4>
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+    </div>
+</body>
+
+</html>
